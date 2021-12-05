@@ -1,0 +1,7 @@
+django==3.2.9
+mysqlclient==2.1.0
+factory_boy==3.2.1
+django-debug-toolbar==3.2.4
+flake8==4.0.1
+black==21.12b0
+isort==5.10.1

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Django全文検索デモ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Django全文検索デモ</h1>
+        <form method="GET" class="mt-5">
+            {{ context.form.as_p }}
+            <button type="submit" class="btn btn-primary">検索</button>
+        </form>
+        <table class="table table-bordered mt-5">
+            <thead class="thead-light">
+                <tr>
+                    <th>作家名</th>
+                    <th>タイトル</th>
+                    <th>コンテンツ</th>
+                </tr>
+            </thead>
+            {% for novel in context.novels %}
+            <tr>
+                <td>{{ novel.author_name }}</td>
+                <td>{{ novel.title }}</td>
+                <td>{{ novel.content }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
